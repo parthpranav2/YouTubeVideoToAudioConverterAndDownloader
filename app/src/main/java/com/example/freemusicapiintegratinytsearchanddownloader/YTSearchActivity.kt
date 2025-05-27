@@ -10,6 +10,10 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.freemusicapiintegratinytsearchanddownloader.databinding.ActivityYtsearchactivityBinding
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.squareup.picasso.Picasso
 import okhttp3.OkHttpClient
 import retrofit2.*
@@ -20,12 +24,29 @@ class YTSearchActivity : AppCompatActivity() {
     private lateinit var adapter: VideoAdapter
     private val videoList = mutableListOf<Video>()
 
-    val apiKey = "fefbbccd25mshc792dfdfb4af473p107bb4jsn6df436454e46"
+    private lateinit var apiKey : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityYtsearchactivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+        val dbRef = FirebaseDatabase.getInstance().getReference("freemusicapiintegratinytsearchanddownloader").child("apikey")
+
+        dbRef.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                apiKey = snapshot.getValue(String::class.java) ?: ""
+            }
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(
+                    this@YTSearchActivity,
+                    "Unable to fetch api key error: ${error.message}",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        })
+
 
         binding.rvSongs.layoutManager = LinearLayoutManager(this)
         adapter = VideoAdapter(videoList) { videoUrl ->

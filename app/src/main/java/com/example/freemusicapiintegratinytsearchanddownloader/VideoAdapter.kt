@@ -17,7 +17,7 @@ class VideoAdapter(private val videoList: List<Video>,
     class VideoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val songImage: ShapeableImageView = itemView.findViewById(R.id.imgThumbnail)
         val songUrl: TextView = itemView.findViewById(R.id.txtsongURl)
-        val btnGetSource: View = itemView.findViewById(R.id.btnGetSource)
+        val btnGetSource: View = itemView.findViewById(R.id.btnDownload)
 
         val txtDownloadStatus: TextView = itemView.findViewById(R.id.txtDownloadStatus)
         val progressBar: ProgressBar = itemView.findViewById(R.id.progressBar)

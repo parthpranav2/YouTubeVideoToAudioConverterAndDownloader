@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "139742398029",
+    "project_id": "api-key-setter-b7476",
+    "storage_bucket": "api-key-setter-b7476.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:139742398029:android:fac742c7353d5587a97e04",
+        "android_client_info": {
+          "package_name": "com.example.freemusicapiintegratinspotifysearchanddownloader"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPPuXQL2d73yB0XZguKXYsJ-ALgO1fm0c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:139742398029:android:8bb4a1f5f29557baa97e04",
+        "android_client_info": {
+          "package_name": "com.example.freemusicapiintegratinytsearchanddownloader"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPPuXQL2d73yB0XZguKXYsJ-ALgO1fm0c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

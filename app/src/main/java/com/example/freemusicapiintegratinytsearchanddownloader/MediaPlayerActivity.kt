@@ -26,7 +26,7 @@ import android.os.Handler
 
 
 class MediaPlayerActivity : AppCompatActivity() {
-    private var mediaPlayer: MediaPlayer? = null
+    private var mediaPlayer : MediaPlayer? = null
     private var isPlaying = false
     private val client = OkHttpClient()
     private lateinit var progressBar: ProgressBar
@@ -54,10 +54,9 @@ class MediaPlayerActivity : AppCompatActivity() {
         playPauseButton = findViewById(R.id.playPauseButton)
         playPauseButton.isEnabled=false
 
-        val playPauseButton = findViewById<Button>(R.id.playPauseButton)
 
 
-        findViewById<Button>(R.id.btnGetSource).setOnClickListener {
+        findViewById<Button>(R.id.btnDownload).setOnClickListener {
             GlobalScope.launch(Dispatchers.IO) {
                 downloadMP3(GlobalData.downloadURL ?: "", GlobalData.title ?: "music")
             }

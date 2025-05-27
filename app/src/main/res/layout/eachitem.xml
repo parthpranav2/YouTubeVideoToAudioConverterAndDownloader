@@ -51,7 +51,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/btnGetSource"
+            android:id="@+id/btnDownload"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Get Source"
